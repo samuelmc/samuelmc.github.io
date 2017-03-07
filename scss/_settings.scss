@@ -41,6 +41,8 @@
 //  36. Tooltip
 //  37. Top Bar
 
+//  38. Select
+
 @import 'util/util';
 
 // 1. Global
@@ -618,4 +620,12 @@ $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
+
+// 38. Select
+// ----------
+
+$select-background: $input-background !default;
+$select-border: $input-border !default;
+$select-color: $input-color !default;
+$select-dropdown-height: rem-calc(300);
 

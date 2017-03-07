@@ -1,7 +1,11 @@
 @charset 'utf-8';
 
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import "font-awesome";
+
 @import 'settings';
 @import 'foundation';
+@import 'foundation-select';
 @import 'motion-ui';
 
 @include foundation-global-styles;
@@ -46,6 +50,8 @@
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 // @include foundation-flex-classes;
+
+@include foundation-select;
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
