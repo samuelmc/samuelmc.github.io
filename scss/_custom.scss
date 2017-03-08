@@ -1,0 +1,22 @@
+.top-bar {
+  position: relative;
+  padding: 0;
+
+  .top-bar-title {
+    line-height: 1;
+    padding-top: 0;
+    padding-bottom: 0;
+    strong {
+      display: inline-block;
+      padding: .7rem 0;
+    }
+  }
+}
+.responsive-menu-toggler {
+  position: absolute;
+  @include gutter-calc((right), .5);
+}
+
+main {
+  @include gutter-calc((margin-top), 2);
+}

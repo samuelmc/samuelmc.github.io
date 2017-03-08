@@ -5,6 +5,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 
 @import 'settings';
 @import 'foundation';
+@import "foundation-perfect-scrollbar";
 @import 'foundation-select';
 @import 'motion-ui';
 
@@ -51,7 +52,13 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 @include foundation-float-classes;
 // @include foundation-flex-classes;
 
+@include foundation-perfect-scrollbar;
 @include foundation-select;
+
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+@import "utils/functions";
+@import "utils/mixins";
+@import "custom";
