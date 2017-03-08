@@ -44,40 +44,70 @@
 <main class="row">
     <div class="columns">
         <h1>Foundation Select<br>
-            <small>Slick, intuitive and styleable.</small>
+            <small>Slick, intuitive and styleable select dropdowns.</small>
         </h1>
         <p>
             This plugin makes it easy create styleable select dropdowns in Foundation.
         </p>
         <div class="row">
-            <div class="medium-8 column">
-                <span>Basic example</span>
-                <pre><code class="lang-html">&lt;label for="select-1"&gt;Select&lt;/label&gt;
+            <div class="column">
+                <pre><code class="lang-html">&lt;label for="select-1"&gt;Basic elect&lt;/label&gt;
 &lt;select id="select-1" data-select&gt;
     &lt;option value=""&gt;Choose an option&lt;/option&gt;
     &lt;option value="1"&gt;Option 1&lt;/option&gt;
     &lt;option value="2"&gt;Option 2&lt;/option&gt;
     ...
-&lt;/select&gt;</code></pre>
+&lt;/select&gt;
+
+&lt;label for="select-2"&gt;Multiple select&lt;/label&gt;
+&lt;select id="select-2" data-select multiple size="6"&gt;
+    &lt;option value=""&gt;Choose an option&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    ...
+&lt;/select&gt;
+                </code></pre>
             </div>
-            <div class="medium-4 column">
+            <div class="column">
                 <form>
-                    <label for="basic-select">Basic select</label>
-                    <select id="basic-select" data-select>
-                        <option value="">Choose an option...</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                        <option value="4">Option 4</option>
-                        <option value="5">Option 5</option>
-                        <option value="6">Option 6</option>
-                        <option value="7">Option 7</option>
-                        <option value="8">Option 8</option>
-                        <option value="9">Option 9</option>
-                        <option value="10">Option 10</option>
-                        <option value="11">Option 11</option>
-                        <option value="12">Option 12</option>
-                    </select>
+                    <div class="row">
+                        <div class="medium-6 column">
+                            <label for="select-1">Basic select</label>
+                            <select id="select-1" data-select>
+                                <option value="">Choose an option...</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                                <option value="7">Option 7</option>
+                                <option value="8">Option 8</option>
+                                <option value="9">Option 9</option>
+                                <option value="10">Option 10</option>
+                                <option value="11">Option 11</option>
+                                <option value="12">Option 12</option>
+                            </select>
+                        </div>
+                        <div class="medium-6 column">
+                            <label for="select-2">Multiple select</label>
+                            <select id="select-2" data-select multiple size="6">
+                                <option value="">Choose an option...</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                                <option value="7">Option 7</option>
+                                <option value="8">Option 8</option>
+                                <option value="9">Option 9</option>
+                                <option value="10">Option 10</option>
+                                <option value="11">Option 11</option>
+                                <option value="12">Option 12</option>
+                            </select>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
