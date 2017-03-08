@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Moncarey</title>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="bower_components/highlight-js/src/styles/github.css">
 </head>
 <body>
 <!--<div class="top-bar">
@@ -71,7 +72,7 @@
                 <div class="row">
                     <div class="medium-6 column">
                         <label for="basic-select">Basic select</label>
-                        <select id="basic-select" data-select>
+                        <select id="basic-select" data-select="">
                             <option value="">Choose an option...</option>
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
@@ -89,7 +90,7 @@
                     </div>
                     <div class="medium-6 column">
                         <label for="multiple-select">Multiple select</label>
-                        <select id="multiple-select" data-select multiple>
+                        <select id="multiple-select" data-select="" multiple size="6">
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
                             <option value="3">Option 3</option>
@@ -105,7 +106,21 @@
                         </select>
                     </div>
                 </div>
-            </form>
+            </form><!--
+            <pre>
+                <code class="lang-html">&lt;select data-select&gt;
+    &lt;option value=""&gt;Choose an option&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    ...
+&lt;/select&gt;
+
+&lt;select data-select multiple size="6"&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    ...
+&lt;/select&gt;</code>
+            </pre>-->
         </div>
     </div>
 </main>
@@ -116,6 +131,8 @@
 <script src="bower_components/foundation-sites/dist/js/foundation.min.js"></script>
 <script src="bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"></script>
 <script src="bower_components/foundation-select/dist/js/foundation.select.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="js/app.js"></script>
 </body>
 </html>

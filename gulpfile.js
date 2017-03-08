@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var highlight = require('gulp-highlight');
 var $ = require('gulp-load-plugins')();
 
 var sassPaths = [
