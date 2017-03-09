@@ -26,12 +26,12 @@
   "devDependencies": {
     "foundation-perfect-scrollbar": "1.2.x-dev"
   },
-  "version": "1.2.1",
-  "_release": "1.2.1",
+  "version": "1.2.2",
+  "_release": "1.2.2",
   "_resolution": {
     "type": "version",
-    "tag": "1.2.1",
-    "commit": "9bbfd162ca52f8501c7876f8a51aa6968de23f00"
+    "tag": "1.2.2",
+    "commit": "7638a7d51864802c66c98c7449e899db87dcb476"
   },
   "_source": "https://github.com/samuelmc/foundation-select.git",
   "_target": "^1.2.0",

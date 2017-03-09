@@ -51,7 +51,7 @@
         </p>
         <div class="row">
             <div class="column">
-                <pre><code class="lang-html">&lt;label for="select-1"&gt;Basic elect&lt;/label&gt;
+                <pre><code class="html">&lt;label for="select-1"&gt;Basic elect&lt;/label&gt;
 &lt;select id="select-1" data-select&gt;
     &lt;option value=""&gt;Choose an option&lt;/option&gt;
     &lt;option value="1"&gt;Option 1&lt;/option&gt;
@@ -112,8 +112,8 @@
         </div>
         <h2>Installation</h2>
         <strong>With bower:</strong>
-        <pre><code class="lang-bash">bower install --save foundation-select</code></pre>
-        <pre><code class="lang-html">&lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-sites/dist/css/foundation.min.css"&gt;
+        <pre><code class="bash">bower install --save foundation-select</code></pre>
+        <pre><code class="html">&lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-sites/dist/css/foundation.min.css"&gt;
 &lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-perfect-scrollbar/dist/css/foundation-perfect-scrollbar.min.css"&gt;
 &lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-select/dist/css/foundation-select.min.css"&gt;
 &lt;link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css"&gt;
@@ -123,7 +123,7 @@
 &lt;script src="bower_components/foundation-sites/dist/js/foundation.min.js"&gt;&lt;/script&gt;
 &lt;script src="bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"&gt;&lt;/script&gt;
 &lt;script src="bower_components/foundation-select/dist/js/foundation.select.min.js"&gt;&lt;/script&gt;</code></pre>
-        <pre><code class="lang-js">var gulp = require('gulp');
+        <pre><code class="js">var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
 
 var sassPaths = [
@@ -137,6 +137,10 @@ var sassPaths = [
 
 gulp.task('sass', function() {
     ...</code></pre>
+        <pre><code class="scss">$select-background: $input-background !default;
+$select-border: $input-border !default;
+$select-color: $input-color !default;
+$select-dropdown-height: rem-calc(300);</code></pre>
     </div>
 </main>
 
@@ -146,7 +150,7 @@ gulp.task('sass', function() {
 <script src="/bower_components/foundation-sites/dist/js/foundation.min.js"></script>
 <script src="/bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"></script>
 <script src="/bower_components/foundation-select/dist/js/foundation.select.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+<script src="/js/vendor/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script src="/js/app.js"></script>
 </body>
