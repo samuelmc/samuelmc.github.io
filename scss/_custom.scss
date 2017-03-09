@@ -20,3 +20,7 @@
 main {
   @include gutter-calc((margin-top), 2);
 }
+
+.hljs {
+  margin-bottom: 1rem;
+}
