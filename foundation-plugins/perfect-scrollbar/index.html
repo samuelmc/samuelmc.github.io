@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Moncarey</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/js/vendor/highlight/styles/github.css">
+</head>
+<body>
+<div class="top-bar">
+    <div class="row column">
+        <div class="top-bar-title">
+            <div data-responsive-toggle="responsive-menu" data-hide-for="medium" class="responsive-menu-toggler">
+                <button class="menu-icon dark" type="button" data-toggle></button>
+            </div>
+            <strong><a href="/">Samuel Moncarey</a></strong>
+        </div>
+
+        <div id="responsive-menu">
+            <div class="row">
+                <div class="top-bar-left">
+                    <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+                        <li>
+                            <a>Foundation plugins</a>
+                            <ul class="vertical menu">
+                                <li>
+                                    <a href="/foundation-plugins/select">Select</a>
+                                </li>
+                                <li>
+                                    <a href="/foundation-plugins/perfect-scrollbar">Perfect scrollbar</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-bar-right">
+                    <ul class="vertical medium-horizontal menu">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="row">
+    <div class="columns">
+        <h1>Foundation Perfect Scrollbar<br>
+            <small>Perfect scrollbar plugin for Foundation.</small>
+        </h1>
+        <p>
+            This plugin integrates <a>Perfect scrollbar</a> into Foundation.
+        </p>
+        <h2>Installation</h2>
+        <h3>Download</h3>
+        <pre><code class="bash">bower install --save foundation-perfect-scrollbar</code></pre>
+        <h3>Install styles</h3>
+        <strong>Basic setup</strong>
+        <p>If you are not making use of Foundation's powerful scss, include the required css to your html file.</p>
+        <pre><code class="html">&lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-sites/dist/css/foundation.min.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-perfect-scrollbar/dist/css/foundation-perfect-scrollbar.min.css"&gt;</code></pre>
+        <strong>Advanced setup</strong>
+        <p>To include the styles in scss, add the required paths to your gulpfile.</p>
+        <pre><code class="js">var gulp = require('gulp');
+var $    = require('gulp-load-plugins')();
+
+var sassPaths = [
+    'bower_components/normalize.scss/sass',
+    'bower_components/foundation-sites/scss',
+    'bower_components/motion-ui/src',
+    'bower_components/foundation-perfect-scrollbar/src/scss/plugin'
+];
+
+gulp.task('sass', function() {
+    ...</code></pre>
+        <pre><code class="scss">$select-background: $input-background !default;
+$select-border: $input-border !default;
+$select-color: $input-color !default;
+$select-dropdown-height: rem-calc(300);</code></pre>
+    </div>
+
+        <pre><code>&lt;script src="bower_components/jquery/dist/jquery.js"&gt;&lt;/script&gt;
+&lt;script src="bower_components/what-input/dist/what-input.js"&gt;&lt;/script&gt;&lt;script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="bower_components/foundation-sites/dist/js/foundation.min.js"&gt;&lt;/script&gt;
+&lt;script src="bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"&gt;&lt;/script&gt;</code></pre>
+
+</main>
+
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/what-input/dist/what-input.js"></script>
+<script src="/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+<script src="/bower_components/foundation-sites/dist/js/foundation.min.js"></script>
+<script src="/bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"></script>
+<script src="/bower_components/foundation-select/dist/js/foundation.select.min.js"></script>
+<script src="/js/vendor/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/app.js"></script>
+</body>
+</html>
