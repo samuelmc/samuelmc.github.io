@@ -23,12 +23,12 @@
     "foundation-sites": "^6.2.3",
     "perfect-scrollbar": "^0.6.12"
   },
-  "version": "1.2.0",
-  "_release": "1.2.0",
+  "version": "1.2.2",
+  "_release": "1.2.2",
   "_resolution": {
     "type": "version",
-    "tag": "1.2.0",
-    "commit": "7db463fff40d1037592ea736c3563f73c7bb079f"
+    "tag": "1.2.2",
+    "commit": "e59de2b7d0a0f71f05a72db4f46b5c517edf0e60"
   },
   "_source": "https://github.com/samuelmc/foundation-perfect-scrollbar.git",
   "_target": "^1.2.0",
