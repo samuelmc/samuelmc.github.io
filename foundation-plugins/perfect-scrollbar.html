@@ -1,0 +1,42 @@
+<main class="row">
+    <div class="columns">
+        <h1>Foundation Perfect Scrollbar<br>
+            <small>Perfect scrollbar plugin for Foundation.</small>
+        </h1>
+        <p>
+            This plugin integrates <a>Perfect scrollbar</a> into Foundation.
+        </p>
+        <h2>Installation</h2>
+        <h3>Download</h3>
+        <pre><code class="bash">bower install --save foundation-perfect-scrollbar</code></pre>
+        <h3>Install styles</h3>
+        <strong>Basic setup</strong>
+        <p>If you are not making use of Foundation's powerful scss, include the required css to your html file.</p>
+        <pre><code class="html">&lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-sites/dist/css/foundation.min.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-perfect-scrollbar/dist/css/foundation-perfect-scrollbar.min.css"&gt;</code></pre>
+        <strong>Advanced setup</strong>
+        <p>To include the styles in scss, add the required paths to your gulpfile.</p>
+        <pre><code class="js">var gulp = require('gulp');
+var $    = require('gulp-load-plugins')();
+
+var sassPaths = [
+    'bower_components/normalize.scss/sass',
+    'bower_components/foundation-sites/scss',
+    'bower_components/motion-ui/src',
+    'bower_components/foundation-perfect-scrollbar/src/scss/plugin'
+];
+
+gulp.task('sass', function() {
+    ...</code></pre>
+        <pre><code class="scss">$select-background: $input-background !default;
+$select-border: $input-border !default;
+$select-color: $input-color !default;
+$select-dropdown-height: rem-calc(300);</code></pre>
+    </div>
+
+        <pre><code>&lt;script src="bower_components/jquery/dist/jquery.js"&gt;&lt;/script&gt;
+&lt;script src="bower_components/what-input/dist/what-input.js"&gt;&lt;/script&gt;&lt;script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="bower_components/foundation-sites/dist/js/foundation.min.js"&gt;&lt;/script&gt;
+&lt;script src="bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"&gt;&lt;/script&gt;</code></pre>
+
+</main>
