@@ -15,6 +15,7 @@ var routing = {
     },
     cache: {},
     route: function (routeName, replace) {
+        routeName = routeName.replace(/^\/|\/$/g, '');
         if (replace === undefined) replace = false;
         var $main = $('main');
         if (this.cache.hasOwnProperty(routeName)) {
