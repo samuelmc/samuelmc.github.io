@@ -33,8 +33,8 @@ var routing = {
                     url: this.routes[routeName].location,
                     success: function (data) {
                         $main.replaceWith($(data));
-                        $main.foundation();
-                        hljs.initHighlighting();
+                        // $main.foundation();
+                        // hljs.initHighlighting();
                     }
                 });
             }
