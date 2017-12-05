@@ -35,8 +35,11 @@ var routing = {
                         $data = $(data);
                         $main.replaceWith($data);
                         $data.foundation();
-                        // $main.foundation();
-                        // hljs.initHighlighting();
+                        $data.find('pre code').each(function (index, block) {
+                            hljs.highlightBlock(block);
+                        });
+
+                        //this.cache[routeName] = {};
                     }
                 });
             }
