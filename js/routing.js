@@ -1,6 +1,6 @@
 var routing = {
     routes: {
-        "foundation-plugins/select": {
+        "foundation-plugins/selectt": {
             location: "foundation-plugins/select.html",
             title: "Foundation Select"
         },
