@@ -1,5 +1,4 @@
 $(document).foundation();
 
-var query = location.search.serializeArray();
-
+var query = $.deparam(location.search);
 console.log(query);
