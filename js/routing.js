@@ -15,16 +15,17 @@ var routing = {
     },
     cache: {},
     route: function (routeName, replace) {
+        var $main = $('main');
         routeName = routeName.replace(/^\/|\/$/g, '');
         if (replace === undefined) replace = false;
-        var $main = $('main');
+
         if (this.cache.hasOwnProperty(routeName)) {
             $main.html(this.cache[routeName].html);
             this.setHistory(this.cache[routeName].title, routeName, replace);
         }
         else {
             if (this.routes.hasOwnProperty(routeName)) {
-                $main.load(this.routes[routeName].location, {}, function (responseText, status, xhr) {
+                $main.load(this.routes[routeName].location, {type: 'get'}, function (responseText, status, xhr) {
                     console.log(responseText, status, xhr);
                 });
             }
