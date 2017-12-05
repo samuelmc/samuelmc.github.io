@@ -32,7 +32,9 @@ var routing = {
                 $.ajax({
                     url: this.routes[routeName].location,
                     success: function (data) {
-                        $main.replaceWith($(data));
+                        $data = $(data);
+                        $main.replaceWith($data);
+                        $data.foundation();
                         // $main.foundation();
                         // hljs.initHighlighting();
                     }
