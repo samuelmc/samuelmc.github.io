@@ -30,6 +30,7 @@ var routing = {
                     success: function (data) {
                         $main.replaceWith($(data));
                         $main.foundation();
+                        hljs.initHighlightingOnLoad();
                     }
                 });
             }
