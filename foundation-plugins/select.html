@@ -1,0 +1,129 @@
+<main class="row">
+    <div class="columns">
+
+        <h1>Foundation Select<br>
+            <small>Slick, intuitive and styleable select plugin.</small>
+        </h1>
+        <p>This plugin makes it easy create styleable select dropdowns in Foundation.</p>
+
+        <div class="row">
+            <div class="column">
+                <pre><code class="html">&lt;label for="select-1"&gt;Basic select&lt;/label&gt;
+&lt;select id="select-1" data-select&gt;
+    &lt;option value=""&gt;Choose an option&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    ...
+&lt;/select&gt;
+
+&lt;label for="select-2"&gt;Multiple select&lt;/label&gt;
+&lt;select id="select-2" data-select multiple size="6"&gt;
+    &lt;option value=""&gt;Choose an option&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    ...
+&lt;/select&gt;</code></pre>
+            </div>
+
+            <div class="column">
+                <form>
+                    <div class="row">
+                        <div class="medium-6 column">
+                            <label for="select-1">Basic select</label>
+                            <select id="select-1" data-select>
+                                <option value="">Choose an option...</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                                <option value="7">Option 7</option>
+                                <option value="8">Option 8</option>
+                                <option value="9">Option 9</option>
+                                <option value="10">Option 10</option>
+                                <option value="11">Option 11</option>
+                                <option value="12">Option 12</option>
+                            </select>
+                        </div>
+                        <div class="medium-6 column">
+                            <label for="select-2">Multiple select</label>
+                            <select id="select-2" data-select multiple size="6">
+                                <option value="">Choose an option...</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                                <option value="7">Option 7</option>
+                                <option value="8">Option 8</option>
+                                <option value="9">Option 9</option>
+                                <option value="10">Option 10</option>
+                                <option value="11">Option 11</option>
+                                <option value="12">Option 12</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <h2>Installation</h2>
+
+        <h3>Download</h3>
+        <pre><code class="bash">bower install --save foundation-select</code></pre>
+
+        <h3>Setup styles</h3>
+        <strong>Basic setup</strong>
+        <p>If you are not making use of Foundation's powerful scss, include the required css to your html file.</p>
+        <pre><code class="html">&lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-sites/dist/css/foundation.min.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-perfect-scrollbar/dist/css/foundation-perfect-scrollbar.min.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="bower_components/foundation-select/dist/css/foundation-select.min.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css"&gt;</code></pre>
+
+        <strong>Advanced setup</strong>
+        <p>To include the styles in scss, add the required paths to your gulpfile.</p>
+        <pre><code class="js">var gulp = require('gulp');
+var $    = require('gulp-load-plugins')();
+
+var sassPaths = [
+    'bower_components/normalize.scss/sass',
+    'bower_components/foundation-sites/scss',
+    'bower_components/motion-ui/src',
+    'bower_components/font-awesome/scss',
+    'bower_components/foundation-perfect-scrollbar/src/scss/plugin',
+    'bower_components/foundation-select/src/scss/plugin'
+];
+
+gulp.task('sass', function() {
+    ...</code></pre>
+
+        <p>Then add these settings to your _settings.scss file for customization </p>
+        <pre><code class="scss">$select-background: $input-background !default;
+$select-border: $input-border !default;
+$select-color: $input-color !default;
+$select-dropdown-height: rem-calc(300);</code></pre>
+
+        <h3>Include scripts</h3>
+        <pre><code>&lt;script src="bower_components/jquery/dist/jquery.js"&gt;&lt;/script&gt;
+&lt;script src="bower_components/what-input/dist/what-input.js"&gt;&lt;/script&gt;&lt;script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="bower_components/foundation-sites/dist/js/foundation.min.js"&gt;&lt;/script&gt;
+&lt;script src="bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"&gt;&lt;/script&gt;
+&lt;script src="bower_components/foundation-select/dist/js/foundation.select.min.js"&gt;&lt;/script&gt;</code></pre>
+
+        <h2>Usage</h2>
+        <p>Just add a data-select attribute to your select tag.</p>
+        <pre><code class="html">&lt;select data-select&gt;
+    &lt;option value=""&gt;Choose an option&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    ...
+&lt;/select&gt;</code></pre>
+
+        <p>The plugin will automaticaly initialize the select dropdowns with foundation.</p>
+        <pre><code class="js">$(document).foundation();</code></pre>
+
+    </div>
+
+</main>
