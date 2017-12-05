@@ -1,11 +1,15 @@
 var routing = {
     routes: {
+        "<front>": {
+            location: "/_views/foundation-plugins/select.html",
+            title: "Foundation Select"
+        },
         "foundation-plugins/select": {
-            location: "foundation-plugins/select.html",
+            location: "/_views/foundation-plugins/select.html",
             title: "Foundation Select"
         },
         "foundation-plugins/perfect-scrollbar": {
-            location: "foundation-plugins/perfect-scrollbar.html",
+            location: "/_views/foundation-plugins/perfect-scrollbar.html",
             title: "Foundation Perfect Scrollbar"
         }
     },
