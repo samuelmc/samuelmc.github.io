@@ -10,7 +10,7 @@ var routing = {
         }
     },
     error: {
-        location: "not-found.html",
+        html: "<h1>404 Not found...</h1>",
         title: "Not Found"
     },
     cache: {},
@@ -24,7 +24,7 @@ var routing = {
         }
         else {
             if (this.routes.hasOwnProperty(routeName)) {
-                $('main').load(this.routes[routeName].location, {}, function (responseText, status, xhr) {
+                $main.load(this.routes[routeName].location, {}, function (responseText, status, xhr) {
                     console.log(responseText, status, xhr);
                 });
             }
