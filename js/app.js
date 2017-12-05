@@ -1,4 +1,7 @@
 $(document).foundation();
 
 var query = $.deparam(location.search);
-console.log(query);
+
+if (query.q) {
+    history.replaceState({}, '', query.q);
+}
