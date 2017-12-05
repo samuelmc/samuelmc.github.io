@@ -19,6 +19,7 @@ var routing = {
     },
     cache: {},
     route: function (routeName, replace) {
+        var _this = this;
         var $main = $('main');
         routeName = routeName.replace(/^\/|\/$/g, '');
         if (replace === undefined) replace = false;
@@ -32,14 +33,15 @@ var routing = {
                 $.ajax({
                     url: this.routes[routeName].location,
                     success: function (data) {
-                        $data = $(data);
-                        $main.replaceWith($data);
-                        $data.foundation();
-                        $data.find('pre code').each(function (index, block) {
+                        $html = $(data);
+                        $main.replaceWith($html);
+                        $html.foundation();
+                        $html.find('pre code').each(function (index, block) {
                             hljs.highlightBlock(block);
                         });
 
-                        //this.cache[routeName] = {};
+                        _this.setHistory(_this.routes[routeName].title, routeName, replace);
+                        _this.cache[routeName] = {html: $html, title: _this.routes[routeName].title};
                     }
                 });
             }
