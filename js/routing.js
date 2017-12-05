@@ -1,6 +1,6 @@
 var routing = {
     routes: {
-        "foundation-plugins/selectt": {
+        "foundation-plugins/select": {
             location: "foundation-plugins/select.html",
             title: "Foundation Select"
         },
@@ -28,7 +28,8 @@ var routing = {
                 $.ajax({
                     url: this.routes[routeName].location,
                     success: function (data) {
-                        console.log(data);
+                        $main.replaceWith($(data));
+                        $main.foundation();
                     }
                 });
             }
