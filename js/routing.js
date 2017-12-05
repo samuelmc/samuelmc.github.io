@@ -19,8 +19,7 @@ var routing = {
         var $main = $('main');
         if (this.cache.hasOwnProperty(routeName)) {
             $main.html(this.cache[routeName].html);
-            if (!replace) history.pushState({}, this.cache[routeName].title, routeName);
-            else history.replaceState({}, this.cache[routeName].title, routeName)
+            this.setHistory(this.cache[routeName].title, routeName, replace);
         }
         else {
             if (this.routes.hasOwnProperty(routeName)) {
@@ -28,6 +27,14 @@ var routing = {
                     console.log(responseText, status, xhr);
                 });
             }
+            else {
+                $main.html(this.error.html);
+                this.setHistory(this.error.title, routeName, replace);
+            }
         }
+    },
+    setHistory: function (title, routeName, replace) {
+        if (!replace) history.pushState({}, title, routeName);
+        else history.replaceState({}, title, routeName);
     }
 };
