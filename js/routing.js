@@ -25,8 +25,11 @@ var routing = {
         }
         else {
             if (this.routes.hasOwnProperty(routeName)) {
-                $main.load(this.routes[routeName].location, {type: 'get'}, function (responseText, status, xhr) {
-                    console.log(responseText, status, xhr);
+                $.ajax({
+                    url: this.routes[routeName].location,
+                    success: function (data) {
+                        console.log(data);
+                    }
                 });
             }
             else {
