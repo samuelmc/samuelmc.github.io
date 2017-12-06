@@ -1,0 +1,12 @@
+.spinner {
+  > div {
+
+    > div:first-child {
+      display: none !important;
+    }
+
+    > div:last-child {
+      box-shadow: none !important;
+    }
+  }
+}

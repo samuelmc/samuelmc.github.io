@@ -22,8 +22,9 @@ Add all nessesary files to your html. This plugin only works with foundation and
 <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
 ...
 <script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/what-input/dist/what-input.js"></script><script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+<script src="bower_components/what-input/dist/what-input.js"></script>
 <script src="bower_components/foundation-sites/dist/js/foundation.min.js"></script>
+<script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
 <script src="bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"></script>
 <script src="bower_components/foundation-select/dist/js/foundation.select.min.js"></script>
 ```
@@ -79,6 +80,7 @@ $(document).foundation();
 |data-icon-class|'fa-caret-down'|The FontAwesome class for the select triangle icon.|
 |data-placeholder|''|Custom placeholder.|
 |data-value|''|The default value of the select.|
+|data-mousewheel|true|If set to true scrolling over the element will change the value if the element has focus.|
 
 ## Licence
 [![MIT Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://opensource.org/licenses/mit-license.php)

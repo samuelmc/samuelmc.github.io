@@ -11,7 +11,8 @@
   "dependencies": {
     "foundation-sites": "~6.3.0",
     "motion-ui": "~1.2.2",
-    "foundation-select": "^1.2.0"
+    "foundation-select": "^1.2.0",
+    "spin.js": "2"
   },
   "ignore": [
     "**/.*",

@@ -147,7 +147,7 @@
 
         _selectArrowDown(e) {
             e.preventDefault();
-            const $selected = $(this.$list.find('a.selected')[this.$list.find('a.selected').length -1]);
+            const $selected = $(this.$list.find('a.selected')[0]);
             let $option;
 
             if ($selected.parent().is(':last-child')) {
@@ -208,7 +208,7 @@
                 });
 
             $.each(this.$options, (index, option) => {
-                var $target = $(option).find('a');
+                let $target = $(option).find('a');
                 $target.on('click', _this.select.bind(_this));
             });
 
@@ -224,8 +224,10 @@
             this.$element
                 .off('mousewheel.zf.select')
                 .on('mousewheel.zf.select', (e) => {
-                    if (e.originalEvent.deltaY > 0) _this._selectArrowDown(e);
-                    else _this._selectArrowUp(e);
+                    if (_this.$element.is(':focus') && _this.options.mousewheel) {
+                        if (e.originalEvent.deltaY > 0) _this._selectArrowDown(e);
+                        else _this._selectArrowUp(e);
+                    }
                 })
                 .add(this.$dropdown)
                 .off('keybord.zf.dropdown')
@@ -251,7 +253,7 @@
                 });
 
             $.each(this.$options, (index, option) => {
-                var $target = $(option).find('a');
+                let $target = $(option).find('a');
                 $target.on('click', _this.select.bind(_this));
             });
 
@@ -309,7 +311,8 @@
             return {
                 iconClass: 'fa-caret-down',
                 placeholder: '',
-                value: ''
+                value: '',
+                mousewheel: true,
             };
         }
     }
