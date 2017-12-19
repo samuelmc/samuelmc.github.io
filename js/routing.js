@@ -25,27 +25,18 @@ var routing = {
         if (replace === undefined) replace = false;
 
         if (this.cache.hasOwnProperty(routeName)) {
-            $main.html(this.cache[routeName].html);
-            this.setHistory(this.cache[routeName].title, routeName, replace);
+            this.loadHtml(routeName);
+            this.setHistory(this.routes[routeName].title, routeName, replace);
         }
         else {
             if (this.routes.hasOwnProperty(routeName)) {
-                this.setHistory(this.routes[routeName].title, routeName, replace);
                 this.setLoader();
                 $.ajax({
                     url: this.routes[routeName].location,
                     success: function (data) {
-                        $loader.fadeOut();
-                        $html = $(data);
-                        $main.replaceWith($html);
-                        $html.foundation();
-                        $html.find('pre code').each(function (index, block) {
-                            hljs.highlightBlock(block);
-                        });
-
-                        _this.matchAnchors();
-                        $main.fadeIn();
-                        //_this.cache[routeName] = {html: $html, title: _this.routes[routeName].title};
+                        _this.cache[routeName] = data;
+                        _this.loadHtml(routeName);
+                        _this.setHistory(_this.routes[routeName].title, routeName, replace);
                     }
                 });
             }
@@ -54,6 +45,21 @@ var routing = {
                 this.setHistory(this.error.title, routeName, replace);
             }
         }
+    },
+    loadHtml: function (routeName) {
+        var $main = $('main'),
+            $loader = $('#loader');
+
+        $loader.stop().animate({opacity: 0}, 100);
+        $html = $(this.cache[routeName]);
+        $main.replaceWith($html);
+        $html.foundation();
+        $html.find('pre code').each(function (index, block) {
+            hljs.highlightBlock(block);
+        });
+
+        this.matchAnchors();
+        $('main').animate({opacity: 1}, 400);
     },
     matchAnchors: function () {
         var _this = this;
@@ -74,7 +80,7 @@ var routing = {
     setLoader: function () {
         var $main = $('main'),
             $loader = $('#loader');
-        $loader.fadeIn();
-        $main.fadeOut();
+        $loader.animate({opacity: 1}, 200);
+        $main.animate({opacity: 0}, 100);
     }
 };

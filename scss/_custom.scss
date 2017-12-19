@@ -19,6 +19,7 @@
 
 main {
   @include gutter-calc((margin-top), 2);
+  opacity: 0;
 }
 
 .hljs {
