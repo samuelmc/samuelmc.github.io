@@ -19,6 +19,9 @@
 
 main {
   @include gutter-calc((margin-top), 2);
+}
+
+main, #loader {
   opacity: 0;
 }
 
