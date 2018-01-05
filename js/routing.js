@@ -52,21 +52,35 @@ var routing = {
         }
         else {
             if (this.routes.hasOwnProperty(routeName)) {
-                this.setLoader();
-                $.ajax({
-                    url: this.routes[routeName].location,
-                    success: function (data) {
-                        _this.cache[routeName] = data;
-                        _this.loadHtml(routeName);
-                        _this.setHistory(_this.routes[routeName].title, routeName, replace);
-                    }
+                this.getHtml(routeName, function (data) {
+                    _this.setHistory(_this.routes[routeName].title, routeName, replace);
                 });
+                // this.setLoader();
+                // $.ajax({
+                //     url: this.routes[routeName].location,
+                //     success: function (data) {
+                //         _this.cache[routeName] = data;
+                //         _this.loadHtml(routeName);
+                //         _this.setHistory(_this.routes[routeName].title, routeName, replace);
+                //     }
+                // });
             }
             else {
                 $main.html(this.error.html);
                 this.setHistory(this.error.title, routeName, replace);
             }
         }
+    },
+    getHtml: function (routeName, callback) {
+        this.setLoader();
+        $.ajax({
+            url: this.routes[routeName].location,
+            success: function (data) {
+                _this.cache[routeName] = data;
+                _this.loadHtml(routeName);
+                if (typeof callback === 'function') callback(data);
+            }
+        });
     },
     loadHtml: function (routeName) {
         var $main = $('main'),
@@ -97,13 +111,34 @@ var routing = {
         });
     },
     setHistory: function (title, routeName, replace) {
-        if (!replace) history.pushState({}, title, routeName);
-        else history.replaceState({}, title, routeName);
+        if (!replace) history.pushState({route: this.routes[routeName]}, title, routeName);
+        else history.replaceState({route: this.routes[routeName]}, title, routeName);
+    },
+    popHistory: function (popevent) {
+        var route = JSON.parse(popevent.state);
+        if (this.cache.hasOwnProperty(routeName)) {
+            this.loadHtml(routeName);
+            this.setHistory(this.routes[routeName].title, routeName, replace);
+        }
+        else {
+            if (this.routes.hasOwnProperty(routeName)) {
+                this.getHtml(routeName);
+            }
+            else {
+                $main.html(this.error.html);
+            }
+        }
     },
     setLoader: function () {
         var $main = $('main'),
             $loader = $('#loader');
         $loader.animate({opacity: 1}, 200);
         $main.animate({opacity: 0}, 100);
+    },
+
+    init: function () {
+        $('#loader').spin(this.loaderSettings);
+        this.matchAnchors();
+        window.addEventListener('popstate', this.popHistory.bind(this), false);
     }
 };
