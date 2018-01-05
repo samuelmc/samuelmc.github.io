@@ -41,7 +41,6 @@ var routing = {
         position: 'absolute'
     },
     route: function (routeName, replace) {
-        var _this = this;
         var $main = $('main');
         var $loader = $('#loader');
         if (replace === undefined) replace = false;
@@ -52,18 +51,10 @@ var routing = {
         }
         else {
             if (this.routes.hasOwnProperty(routeName)) {
-                this.getHtml(routeName, function (data) {
-                    _this.setHistory(_this.routes[routeName].title, routeName, replace);
-                });
-                // this.setLoader();
-                // $.ajax({
-                //     url: this.routes[routeName].location,
-                //     success: function (data) {
-                //         _this.cache[routeName] = data;
-                //         _this.loadHtml(routeName);
-                //         _this.setHistory(_this.routes[routeName].title, routeName, replace);
-                //     }
-                // });
+                var setHistoryCb = function (routName, replace) {
+                    this.setHistory(this.routes[routeName].title, routeName, replace);
+                };
+                this.getHtml(routeName, setHistoryCb.apply(this, [routeName, replace]));
             }
             else {
                 $main.html(this.error.html);
@@ -72,6 +63,7 @@ var routing = {
         }
     },
     getHtml: function (routeName, callback) {
+        var _this = this;
         this.setLoader();
         $.ajax({
             url: this.routes[routeName].location,
@@ -111,14 +103,13 @@ var routing = {
         });
     },
     setHistory: function (title, routeName, replace) {
-        if (!replace) history.pushState({route: this.routes[routeName]}, title, routeName);
-        else history.replaceState({route: this.routes[routeName]}, title, routeName);
+        if (!replace) history.pushState(routeName, title, routeName);
+        else history.replaceState(routeName, title, routeName);
     },
     popHistory: function (popevent) {
-        var route = JSON.parse(popevent.state);
+        var routeName = popevent.state;
         if (this.cache.hasOwnProperty(routeName)) {
             this.loadHtml(routeName);
-            this.setHistory(this.routes[routeName].title, routeName, replace);
         }
         else {
             if (this.routes.hasOwnProperty(routeName)) {
