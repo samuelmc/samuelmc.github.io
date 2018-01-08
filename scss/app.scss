@@ -56,6 +56,9 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 
 // @include foundation-prototype-classes;
 
+@include foundation-perfect-scrollbar;
+@include foundation-select;
+
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
