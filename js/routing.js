@@ -127,9 +127,10 @@ var routing = {
         $main.animate({opacity: 0}, 100);
     },
 
-    init: function () {
+    init: function (routeName) {
         $('#loader').spin(this.loaderSettings);
         this.matchAnchors();
         window.addEventListener('popstate', this.popHistory.bind(this), false);
+        this.route(routeName, true);
     }
 };
