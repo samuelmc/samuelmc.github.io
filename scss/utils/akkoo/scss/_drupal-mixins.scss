@@ -1,0 +1,12 @@
+@mixin drupal-block($name: '') {
+  @if $name == '' {
+    @content;
+  }
+  @else {
+    $name: str-replace($name, '_', '-');
+    $name: str-replace($name, '--', '-');
+    #block-#{$name}, [id^="block-#{$name}"] {
+      @content;
+    }
+  }
+}

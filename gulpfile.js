@@ -8,7 +8,9 @@ var sassPaths = [
     'bower_components/foundation-perfect-scrollbar/src/scss/plugin',
     'bower_components/foundation-select/src/scss/plugin',
     'bower_components/motion-ui/src',
-    'bower_components/font-awesome/scss'
+    'bower_components/font-awesome/scss',
+    'bower_components/mathsass/dist',
+    'bower_components/sass-triangle'
 ];
 
 gulp.task('sass', function () {

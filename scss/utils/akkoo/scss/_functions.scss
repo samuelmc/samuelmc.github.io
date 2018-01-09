@@ -1,0 +1,84 @@
+
+/// Converts a value to matching vw value. By default, the width used to calculate the vw value is taken from the `$global-width` variable.
+/// @access private
+///
+/// @param {Number} $value - Value to convert.
+/// @param {Number} $width [null] - Width conversion.
+///
+/// @returns {Number} A number in vw, calculated based on the given value and the width value. vw values are passed through as is.
+@function -akkoo-to-vw($value, $width: null) {
+  // Check if the value is a number
+  @if type-of($value) != 'number' {
+    @warn inspect($value) + ' was passed to vw-calc(), which is not a number.';
+    @return $value;
+  }
+
+  // Calculate vw if units for $value is not vw
+  @if unit($value) != 'vw' {
+    $value: (strip-unit(rem-calc($value)) / strip-unit(rem-calc($width))) * 100vw;
+  }
+
+  // Turn 0rem into 0
+  @if $value == 0vw {
+    $value: 0;
+  }
+
+  @return $value;
+}
+
+
+/// Converts one or more values into matching vw values.
+///
+/// @param {Number|List} $values - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
+/// @param {Number} $base [null] - The width to use when calculating the `vw`. If this parameter is `null`, the function will reference the `$base-width` variable as the width.
+///
+/// @returns {List} A list of converted values.
+@function vw-calc($values, $width: null) {
+  $vw-values: ();
+  $count: length($values);
+
+  @if $width == null {
+    $width: $global-width;
+  }
+
+  @if $count == 1 {
+    @return -akkoo-to-vw($values, $width);
+  }
+
+  @for $i from 1 through $count {
+    $vw-values: append($vw-values, -akkoo-to-vw(nth($values, $i), $width));
+  }
+
+  @return $vw-values;
+}
+
+@function em-calc($values, $base: null) {
+  $em-values: ();
+  $count: length($values);
+
+  @if $count == 1 {
+    @return #{strip-unit(rem-calc($values, $base))}em
+  }
+
+  @for $i from 1 through $count {
+    $em-values: append($em-values, #{strip-unit(rem-calc(nth($values, $i), $base))}em);
+  }
+
+  @return $em-values;
+}
+
+/// Replace `$search` with `$replace` in `$string`
+/// @author Hugo Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}

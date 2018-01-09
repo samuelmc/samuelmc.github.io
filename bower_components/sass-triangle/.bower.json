@@ -1,0 +1,35 @@
+{
+  "name": "sass-tiragle",
+  "homepage": "https://github.com/samuelmc/sass-tiragle",
+  "authors": [
+    "Samuel Moncarey <samuel.moncarey@akkoo.com>"
+  ],
+  "description": "Add a triagle tip on a container's border",
+  "main": "_triangle.scss",
+  "keywords": [
+    "sass",
+    "scss",
+    "triangle",
+    "tip"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mathsass": "^0.10.1"
+  },
+  "_release": "1ef681e2a9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1ef681e2a97b801e2fbe830c2ad3e527ba99c0fb"
+  },
+  "_source": "https://github.com/samuelmc/sass-triangle.git",
+  "_target": "*",
+  "_originalSource": "sass-triangle"
+}

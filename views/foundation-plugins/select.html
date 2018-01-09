@@ -68,7 +68,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+            <div class="cell">
 
         <h2>Installation</h2>
 
@@ -101,10 +101,20 @@ gulp.task('sass', function() {
     ...</code></pre>
 
         <p>Then add these settings to your _settings.scss file for customization </p>
-        <pre><code class="scss">$select-background: $input-background !default;
-$select-border: $input-border !default;
-$select-color: $input-color !default;
-$select-dropdown-height: rem-calc(300);</code></pre>
+        <pre><code class="scss">$select-background: $input-background;
+$select-color: $input-color;
+$select-border: $input-border;
+$select-shadow: $input-shadow;
+$select-radius: $input-radius;
+$select-border-focus: $input-border-focus;
+$select-shadow-focus: $input-shadow-focus;
+$select-option-hover-color: $select-color;
+$select-option-selected-color: $select-option-hover-color;
+$select-option-hover-background: rgba($secondary-color, .15);
+$select-option-selected-background: $select-option-hover-background;
+$select-dropdown-height: rem-calc(300);
+$select-multiple-size-default: 5;
+$select-multiple-size-max: 12;</code></pre>
 
         <h3>Include scripts</h3>
         <pre><code>&lt;script src="bower_components/jquery/dist/jquery.js"&gt;&lt;/script&gt;
@@ -113,7 +123,8 @@ $select-dropdown-height: rem-calc(300);</code></pre>
 &lt;script src="bower_components/foundation-sites/dist/js/foundation.min.js"&gt;&lt;/script&gt;
 &lt;script src="bower_components/foundation-perfect-scrollbar/dist/js/foundation.perfectScrollbar.min.js"&gt;&lt;/script&gt;
 &lt;script src="bower_components/foundation-select/dist/js/foundation.select.min.js"&gt;&lt;/script&gt;</code></pre>
-
+            </div>
+            <div class="cell">
         <h2>Usage</h2>
         <p>Just add a data-select attribute to your select tag.</p>
         <pre><code class="html">&lt;select data-select&gt;
@@ -142,11 +153,6 @@ $select-dropdown-height: rem-calc(300);</code></pre>
                 <td>The FontAwesome class for the select triangle icon.</td>
             </tr>
             <tr>
-                <td>data-placeholder</td>
-                <td>''</td>
-                <td>Custom placeholder. Uses the value of the placeholder attribute if available when empty.</td>
-            </tr>
-            <tr>
                 <td>data-value</td>
                 <td>''</td>
                 <td>The default value of the select. Does not override the value attribute.</td>
@@ -158,6 +164,105 @@ $select-dropdown-height: rem-calc(300);</code></pre>
             </tr>
             </tbody>
         </table>
+
+
+                <h3>Examples</h3>
+                <div class="grid-x grid-margin-x">
+                    <div class="cell medium-6">
+                        <h4>Html</h4>
+                        <pre><code class="html">&lt;select data-select data-icon-class="fa-chevron-down"&gt;
+    &lt;option value=""&gt;Select an option&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    ...
+&lt;/select&gt;</code></pre>
+                        <h4>Scss</h4>
+                        <pre><code class="scss">#select-example-1 {
+  @include foundation-select($select-radius: 5px);
+}</code></pre>
+                    </div>
+                    <div class="cell medium-6">
+                        <h4>Result</h4>
+                        <div id="select-example-1">
+                            <label for="select-example-1-select">Select an option</label>
+                            <select id="select-example-1-select" data-select data-icon-class="fa-chevron-down">
+                                <option value="">Select an option</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                                <option value="7">Option 7</option>
+                                <option value="8">Option 8</option>
+                                <option value="9">Option 9</option>
+                                <option value="10">Option 10</option>
+                                <option value="11">Option 11</option>
+                                <option value="12">Option 12</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-x grid-margin-x">
+                    <div class="cell medium-6">
+                        <h4>Html</h4>
+                        <pre><code class="html">&lt;select data-select data-icon-class="fa-chevron-down"&gt;
+    &lt;option value=""&gt;Select an option&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    ...
+&lt;/select&gt;</code></pre>
+                        <h4>Scss</h4>
+                        <p><a target="_blank" href="http://github.com/samuelmc/sass-triangle">triangle-tip mixin</a></p>
+                        <pre><code class="scss">#select-example-2 {
+  .select-wrapper {
+    .select-container {
+      input {
+        border-radius: rem-calc(5);
+      }
+
+      .select-dropdown {
+        border-radius: rem-calc(5);
+        border-top: $select-border-focus;
+        @include triangle-tip(
+          16,
+          top,
+          right,
+          10px,
+          get-border-value($select-border-focus, color),
+          $select-background
+        );
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <div class="cell medium-6">
+                        <h4>Result</h4>
+                        <div id="select-example-2">
+                            <label for="select-example-2-select">Select an option</label>
+                            <select id="select-example-2-select" data-select data-dropdown-offset="10">
+                                <option value="">Select an option</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                                <option value="7">Option 7</option>
+                                <option value="8">Option 8</option>
+                                <option value="9">Option 9</option>
+                                <option value="10">Option 10</option>
+                                <option value="11">Option 11</option>
+                                <option value="12">Option 12</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
 
     </div>
     </div>

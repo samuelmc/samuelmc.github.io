@@ -12,6 +12,7 @@
     }
   }
 }
+
 .responsive-menu-toggler {
   position: absolute;
   @include gutter-calc((right), .5);
@@ -27,4 +28,46 @@ main, #loader {
 
 .hljs {
   margin-bottom: 1rem;
+}
+
+#select-example-1 {
+  @include foundation-select($select-radius: 5px);
+  //.select-wrapper {
+  //  .select-container {
+  //    input {
+  //      border-radius: .5rem;
+  //
+  //      &[aria-expanded="true"] {
+  //        border-radius: .5rem .5rem 0 0;
+  //      }
+  //    }
+  //
+  //    .select-dropdown {
+  //      border-radius: 0 0 .5rem .5rem;
+  //    }
+  //  }
+  //}
+}
+
+#select-example-2 {
+  .select-wrapper {
+    .select-container {
+      input {
+        border-radius: rem-calc(5);
+      }
+
+      .select-dropdown {
+        border-radius: rem-calc(5);
+        border-top: $select-border-focus;
+        @include triangle-tip(
+          16,
+          top,
+          right,
+          10,
+          get-border-value($select-border-focus, color),
+          $select-background
+        );
+      }
+    }
+  }
 }

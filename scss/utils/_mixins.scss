@@ -48,3 +48,44 @@
     }
   }
 }
+
+//@mixin triangle-tip(
+//  $width: 30,
+//  $edge: bottom,
+//  $side: left,
+//  $offset: 15px,
+//  $color: $primary-color,
+//  $fill: $white,
+//  $thickness: 1px,
+//  $rounded: $global-radius
+//) {
+//
+//  $square-side-with: sqrt(pow(($width+2), 2) / 2);
+//  $square-offset: ($width - $square-side-with) / 2;
+//
+//  $rotations: (
+//          top: 45deg,
+//          left: 135deg,
+//          bottom: 225deg,
+//          right: 315deg
+//  );
+//
+//  &:before {
+//    content: '';
+//    display: block;
+//    position: absolute;
+//    width: rem-calc($square-side-with);
+//    height: rem-calc($square-side-with);
+//    #{$edge}: rem-calc((($square-side-with + $thickness) / 2) * (-1));
+//    #{$side}: rem-calc($offset + $square-offset);
+//    @if $side == right { left: auto; }
+//    @if $side == top { bottom: auto; }
+//    @if $side == left { right: auto; }
+//    @if $side == bottom { top: auto; }
+//    border: solid $color;
+//    border-width: rem-calc($thickness 0 0 $thickness);
+//    background: $fill;
+//    border-radius: rem-calc($rounded 0 0 0);
+//    transform: rotate(map_get($rotations, $edge));
+//  }
+//}

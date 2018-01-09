@@ -8,6 +8,8 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 @import "foundation-perfect-scrollbar";
 @import 'foundation-select';
 @import 'motion-ui';
+@import "math";
+@import "triangle";
 
 @include foundation-global-styles;
 //@include foundation-grid;

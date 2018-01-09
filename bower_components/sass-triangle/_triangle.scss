@@ -1,0 +1,44 @@
+@mixin triangle-tip(
+  $width: 20,
+  $edge: top,
+  $side: left,
+  $offset: 15,
+  $color: #000000,
+  $fill: #ffffff,
+  $thickness: 1,
+  $rounded: 0
+) {
+  $width: strip-unit($width);
+  $offset: strip-unit($offset);
+  $thickness: strip-unit($thickness);
+  $rounded: strip-unit($rounded);
+
+  $square-side-with: sqrt(pow(($width+2), 2) / 2);
+  $square-offset: ($width - $square-side-with) / 2;
+
+  $rotations: (
+          top: 45deg,
+          left: 135deg,
+          bottom: 225deg,
+          right: 315deg
+  );
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: #{$square-side-with}px;
+    height: #{$square-side-with}px;
+    #{$edge}: #{((($square-side-with + $thickness) / 2) * (-1))}px;
+    #{$side}: #{($offset + $square-offset)}px;
+    @if $side == right { left: auto; }
+    @if $side == top { bottom: auto; }
+    @if $side == left { right: auto; }
+    @if $side == bottom { top: auto; }
+    border: solid $color;
+    border-width: #{$thickness}px 0 0 #{$thickness}px;
+    background: $fill;
+    border-radius: #{$rounded}px 0 0 0;
+    transform: rotate(map_get($rotations, $edge));
+  }
+}
