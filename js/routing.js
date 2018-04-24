@@ -90,7 +90,7 @@ var routing = {
         var $main = $('main'),
             $loader = $('#loader');
 
-        $loader.stop().animate({opacity: 0}, 100);
+        $loader.stop().animate({opacity: 0}, 100, 'swing', function () {$loader.css({'display':'none'})});
         $html = $(this.cache[routeName]);
         $main.replaceWith($html);
         $html.foundation();
@@ -135,6 +135,7 @@ var routing = {
     setLoader: function () {
         var $main = $('main'),
             $loader = $('#loader');
+        $loader.css({'display':'block'});
         $loader.animate({opacity: 1}, 200);
         $main.animate({opacity: 0}, 100);
     },
