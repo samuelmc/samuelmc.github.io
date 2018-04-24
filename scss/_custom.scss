@@ -17,6 +17,10 @@
   position: absolute;
   @include gutter-calc((right), .5);
 }
+#responsive-menu {
+  display: flex;
+  flex-grow: 1;
+}
 
 main {
   @include gutter-calc((margin-top), 2);
@@ -69,5 +73,58 @@ main, #loader {
         );
       }
     }
+  }
+}
+
+// CV
+
+.cv-wrapper {
+  .page {
+    position: relative;
+    width: 210mm;
+    height: 297mm;
+    margin: 1rem auto;
+    padding: 10mm 15mm;
+
+    border: rem-calc(1) solid darken($body-background, 15%);
+    @include shadow;
+
+    font-family: Ubuntu, sans-serif;
+
+    .contact-info {
+      margin-bottom: 1rem;
+    }
+
+    * {
+      font-family: inherit;
+    }
+
+    h1, h2 {
+      color: #e88800;
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: .5rem;
+    }
+
+    strong {
+      font-weight: 500;
+    }
+
+    span.year {    display: inline-block;
+      right: 15mm;
+      position: absolute;
+      font-weight: 500;
+    }
+
   }
 }
