@@ -23,11 +23,11 @@
   "dependencies": {
     "mathsass": "^0.10.1"
   },
-  "_release": "1ef681e2a9",
+  "_release": "f5213baf6a",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "1ef681e2a97b801e2fbe830c2ad3e527ba99c0fb"
+    "commit": "f5213baf6a0a2a3273ae610981ddf1a4ed99aca6"
   },
   "_source": "https://github.com/samuelmc/sass-triangle.git",
   "_target": "*",
