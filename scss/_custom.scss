@@ -21,6 +21,9 @@
 #responsive-menu {
   display: flex;
   flex-grow: 1;
+  > .grid-x {
+    width: 100%;
+  }
 }
 
 main {
