@@ -38,6 +38,10 @@ main, #loader {
   margin-bottom: 1rem;
 }
 
+#fnd-select-callout {
+  margin-top: 2rem;
+}
+
 #select-example-1 {
   @include foundation-select($select-radius: 5px);
   //.select-wrapper {
