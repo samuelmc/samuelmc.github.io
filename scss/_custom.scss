@@ -44,21 +44,6 @@ main, #loader {
 
 #select-example-1 {
   @include foundation-select($select-radius: 5px);
-  //.select-wrapper {
-  //  .select-container {
-  //    input {
-  //      border-radius: .5rem;
-  //
-  //      &[aria-expanded="true"] {
-  //        border-radius: .5rem .5rem 0 0;
-  //      }
-  //    }
-  //
-  //    .select-dropdown {
-  //      border-radius: 0 0 .5rem .5rem;
-  //    }
-  //  }
-  //}
 }
 
 #select-example-2 {
