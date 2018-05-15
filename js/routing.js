@@ -4,6 +4,18 @@ var routing = {
             location: "/views/home.html",
             title: "Foundation Select"
         },
+        "/cv/en": {
+            location: "/views/cv/en.html",
+            title: "Curriculum Vitae"
+        },
+        "/cv/nl": {
+            location: "/views/cv/nl.html",
+            title: "Curriculum Vitae"
+        },
+        "/cv/fr": {
+            location: "/views/cv/fr.html",
+            title: "Curriculum Vitae"
+        },
         "/foundation-plugins/select": {
             location: "/views/foundation-plugins/select.html",
             title: "Foundation Select"
