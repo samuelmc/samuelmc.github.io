@@ -1,0 +1,198 @@
+// CV
+
+.cv-wrapper {
+  position: relative;
+  .page {
+    position: relative;
+    width: 210mm;
+    height: 297mm;
+    margin: 1em auto;
+    padding: 15mm;
+    font-size: 11.5pt;
+
+    .page-padding {
+      position: relative;
+    }
+
+    border: rem-calc(1) solid darken($body-background, 15%);
+    @include shadow;
+
+    font-family: Ubuntu, sans-serif;
+
+    * {
+      font-family: inherit;
+    }
+
+    h1, h2 {
+      color: #e88800;
+      font-weight: bold;
+      margin-bottom: .5em;
+    }
+
+    h2 {
+      font-size: 1.6em;
+      border-bottom: 1pt #e88800 solid;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-size: 1.3em;
+
+      small, .year {
+        font-size: #{(1/1.3)}em;
+        font-weight: normal;
+        padding-left: 1.5em;
+      }
+
+    }
+
+    p {
+      margin-bottom: .5em;
+    }
+
+    a {
+      color: #e88800;
+      text-decoration: none;
+      transition: color .4s;
+
+      &:hover {
+        color: lighten(#e88800, 15%);
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin-left: 1em;
+
+      li {
+        line-height: 1.6;
+      }
+
+      &.checklist {
+        li {
+          &:before {
+            @include fa-icon;
+            content: $fa-var-check;
+            margin-right: .25em;
+          }
+        }
+        &.bi-column-list{
+          li {
+            display: inline-block;
+            width: 45%;
+          }
+        }
+      }
+
+      &.xp-list {
+        margin-left: 0;
+        p {
+          margin-left: 1em;
+        }
+      }
+    }
+
+    span.year {
+      display: inline-block;
+      //right: 1rem;
+      //position: absolute;
+      float: right;
+    }
+
+  }
+
+  #contact-info {
+    margin-bottom: 1em;
+    border-bottom: 1pt #585858 solid;
+
+    h1 {
+      font-size: 1.4em;
+      text-align: center;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    p {
+      margin-bottom: .25em;
+    }
+
+    .bday {
+      display: inline-block;
+      float: right;
+    }
+
+    .profile-picture-frame{
+      position: relative;
+      width: 10em;
+      height: 100%;
+
+      img {
+        border-radius: 100%;
+        position: absolute;
+        width: 100%;
+        bottom: -0.65rem;
+      }
+    }
+
+  }
+
+  #intro {
+    padding-top: .75em;
+    margin-bottom: 1em;
+    .bubble {
+      position: relative;
+      border: 1pt #585858 solid;
+      border-radius: 1em;
+      box-shadow: 0 0 .4rem .2rem #999;
+      padding: .5em 1em;
+
+      @include triangle-tip(20, top, right, 66, #585858, $body-background, 1pt, 0);
+    }
+  }
+
+  .pdf-download {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+
+    .button {
+      background: #e88800;
+      font-weight: bold;
+
+      &:hover {
+        background: lighten(#e88800, 15%);
+      }
+    }
+  }
+}
+
+@media print {
+  .top-bar, #loader, footer{
+    display: none;
+  }
+
+  main {
+    padding: 0 !important;
+
+    .pdf-download {
+      display: none;
+    }
+  }
+
+  .page {
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    h1, h2 {
+      color: #e88800 !important;
+    }
+
+    a {
+      color: #e88800 !important;
+      text-decoration: none !important;
+    }
+  }
+
+}
